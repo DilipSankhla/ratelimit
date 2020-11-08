@@ -19,7 +19,7 @@ public class RateLimitFilter implements Filter {
     private static final String CLIENT_ID = "clientid";
 
     @Autowired
-    RateLimitService rateLimitService;
+    RateLimitService singleNodeApiRateLimitService;
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)

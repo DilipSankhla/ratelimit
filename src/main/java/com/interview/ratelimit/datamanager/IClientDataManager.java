@@ -1,8 +1,6 @@
 package com.interview.ratelimit.datamanager;
 
-import com.interview.ratelimit.model.ClientApiLimit;
-
-public interface IClientDataManager<k,V> {
+public interface IClientDataManager {
 
     void put(String key, String value);
 

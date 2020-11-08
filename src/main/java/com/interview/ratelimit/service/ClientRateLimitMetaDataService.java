@@ -2,6 +2,8 @@ package com.interview.ratelimit.service;
 
 import com.interview.ratelimit.datamanager.IClientDataManager;
 import com.interview.ratelimit.util.Constent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -23,8 +25,12 @@ public class ClientRateLimitMetaDataService {
   @Autowired
   private IClientDataManager redisClientDataManager;
 
-  @Cacheable
+  private static final Logger logger = LoggerFactory.getLogger(ClientRateLimitMetaDataService.class);
+
+  //@Cacheable
   public Map<String, Integer> getMetaData(final String apiName, final String clientId) {
+
+    logger.info("Getting meta data for {} , {}", apiName, clientId);
 
     Map<String, Integer> clientMetaData = new HashMap<>();
 

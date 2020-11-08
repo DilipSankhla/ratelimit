@@ -15,7 +15,7 @@ import java.util.Map;
 
 @RestController()
 @Validated
-public class ClientRateLimitMetaData {
+public class ClientRateLimitMetaDataController {
 
     @Autowired
     private IClientDataManager redisClientDataManager;
@@ -46,9 +46,6 @@ public class ClientRateLimitMetaData {
                                       @RequestParam("apiname") @NotNull @NotBlank String apiName)
     {
         Map<String, Integer> metaData = clientRateLimitMetaDataService.getMetaData(clientId, apiName);
-
-        return null;
-
+        return new ResponseEntity<>(metaData, HttpStatus.OK);
     }
-
 }

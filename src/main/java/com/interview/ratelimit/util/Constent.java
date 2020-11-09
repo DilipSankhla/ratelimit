@@ -12,4 +12,5 @@ public interface Constent {
 
      String CALL_LIMIT_HAS_EXCEED_FOR_API = "Call limit has exceed for API ";
 
+     String CALL_ALLOWED = "Call Allowed";
 }

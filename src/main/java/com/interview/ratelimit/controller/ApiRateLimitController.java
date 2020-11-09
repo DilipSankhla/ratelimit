@@ -31,6 +31,6 @@ public class ApiRateLimitController {
       return new ResponseEntity<>(Constent.CALL_LIMIT_HAS_EXCEED_FOR_API+apiName,
               HttpStatus.TOO_MANY_REQUESTS);
     }
-    return new ResponseEntity(HttpStatus.OK);
+    return new ResponseEntity<>(Constent.CALL_ALLOWED, HttpStatus.OK);
   }
 }

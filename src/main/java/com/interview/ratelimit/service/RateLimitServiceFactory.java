@@ -1,11 +1,12 @@
 package com.interview.ratelimit.service;
 
-import com.interview.ratelimit.util.Constent;
+import com.interview.ratelimit.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.validation.constraints.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +14,7 @@ import java.util.Map;
 public class RateLimitServiceFactory {
 
   @Value("${serviceMode}")
-  private String serviceMode;
+  private @NotNull String serviceMode;
 
   @Autowired
   private MultiNodeRateLimitService multiNodeRateLimitService;
@@ -29,7 +30,7 @@ public class RateLimitServiceFactory {
 
   @PostConstruct
   private void setServices() {
-    rateLimitServiceMap.put(Constent.SINGLE, singleNodeApiRateLimitService);
-    rateLimitServiceMap.put(Constent.MULTI, multiNodeRateLimitService);
+    rateLimitServiceMap.put(Constant.SINGLE, singleNodeApiRateLimitService);
+    rateLimitServiceMap.put(Constant.MULTI, multiNodeRateLimitService);
   }
 }

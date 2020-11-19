@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class RedisClientDataManager implements IClientDataManager {
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisTemplate<String, String > redisTemplate;
 
     @Override
     public void put(final String key, final String value) {

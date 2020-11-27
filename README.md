@@ -17,6 +17,10 @@ This data store is also configurable.
  
 ## Installation
 
+Run docker-compose up
+
+OR
+
 Run ApiRateLimitApplication application. Application require redis running locally on default port.
 
 ## Usage

@@ -17,11 +17,41 @@ This data store is also configurable.
  
 ## Installation
 
+1. Run mvn package for creating jar file
+
 Run docker-compose up
 
 OR
 
 Run ApiRateLimitApplication application. Application require redis running locally on default port.
+
+OR
+
+If you want to containerize your application and run in kubernetes cluster use below commands. Redis and web application are on different pod. 
+
+minikube start --insecure-registry
+
+eval $(minikube docker-env)
+
+docker build -t ratelimit_app -f Dockerfile .
+
+kubectl create -f redis-deployment.yml 
+
+kubectl create -f redis-service.yml 
+
+kubectl create -f app-deployment.yml 
+
+kubectl create -f app-service.yml 
+
+minikube service web 
+
+OR 
+
+Docker compose option is also added
+
+OR
+
+Use deployment.yml to run both Redis and web application on same pod
 
 ## Usage
 
@@ -36,5 +66,4 @@ curl -vvv "http://localhost:8080/ratelimit?apiname=/this/get/something&clientid=
 
 ```
 
-## ToDo
-* Dockerization
+

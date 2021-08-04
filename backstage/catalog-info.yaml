@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Ratelimit
+  description: |
+    Backstage is an open-source developer portal that puts the developer experience first.
+  annotations:
+    backstage.io/techdocs-ref: 'https://github.com/DilipSankhla/ratelimit/tree/master/backstage/catalog.yaml'
+spec:
+  type: documents
+  owner: CNCF
+  lifecycle: experimental

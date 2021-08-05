@@ -5,7 +5,7 @@ metadata:
   description: |
     Backstage is an open-source developer portal that puts the developer experience first.
   annotations:
-    backstage.io/techdocs-ref: 'https://github.com/DilipSankhla/ratelimit/tree/master/backstage/catalog.yaml'
+    backstage.io/techdocs-ref: 'https://github.com/DilipSankhla/ratelimit/tree/master/backstage/'
 spec:
   type: documents
   owner: CNCF

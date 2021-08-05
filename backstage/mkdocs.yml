@@ -1,4 +1,4 @@
-ite_name: 'Backstage'
+site_name: 'Ratelimit'
 site_description: 'Main documentation for Backstage features and platform APIs'
 
 plugins:
@@ -6,4 +6,4 @@ plugins:
 
 nav:
   - Overview:
-      - What is Backstage?: 'index.md'
+      - What is Backstage: 'index.md'
